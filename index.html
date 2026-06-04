@@ -5,15 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Opal CHR Consulting | Cabinet de Conseil Hôtellerie-Restauration</title>
 <meta name="description" content="Opal CHR Consulting, cabinet expert en conseil stratégique pour les cafés, hôtels et restaurants. Audit gratuit, accompagnement sur-mesure et optimisation des performances CHR. Résultats mesurables garantis.">
-<meta name="keywords" content="consulting CHR, conseil hôtellerie restauration, cabinet conseil CHR, optimisation restaurant, audit hôtel, stratégie CHR, performance établissement CHR, revenue management hôtel">
+<meta name="keywords" content="consulting CHR, conseil hôtellerie restauration, cabinet conseil CHR, optimisation restaurant, audit hôtel, stratégie CHR, performance établissement CHR, revenue management hôtel, consultant CHR Paris, conseil CHR Lyon, conseil CHR Marseille, conseil CHR Nice">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Opal CHR Consulting">
+<link rel="canonical" href="https://www.opalchr-consulting.fr/">
 <meta property="og:title" content="Opal CHR Consulting | Experts en Hôtellerie-Restauration">
-<meta property="og:description" content="Transformez les performances de votre établissement CHR avec nos experts. Audit stratégique gratuit disponible.">
+<meta property="og:description" content="Augmentez la rentabilité de votre établissement CHR. +150 missions, 15 ans d'expertise, 98% de satisfaction. Audit gratuit disponible.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.opalchr-consulting.fr/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Opal CHR Consulting",
+  "description": "Cabinet expert en conseil stratégique pour les Cafés, Hôtels et Restaurants. Audit, revenue management, formation management, transformation digitale.",
+  "url": "https://www.opalchr-consulting.fr",
+  "telephone": "+33-1-XX-XX-XX-XX",
+  "email": "contact@opalchr-consulting.fr",
+  "address": {"@type": "PostalAddress", "addressLocality": "Paris", "addressCountry": "FR"},
+  "areaServed": ["Paris", "Lyon", "Marseille", "Nice", "France"],
+  "foundingDate": "2009",
+  "numberOfEmployees": {"@type": "QuantitativeValue", "value": "10"},
+  "sameAs": ["https://github.com/hchc75/opal-chr-consulting"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -44,11 +63,7 @@
   --bdr2:rgba(0,155,148,.25);
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;font-weight:400;overflow-x:hidden;cursor:none}
-
-/* CUSTOM CURSOR */
-#cur{position:fixed;width:10px;height:10px;background:var(--em);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:multiply;transition:width .18s,height .18s}
-#cur-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(0,155,148,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .25s,height .25s}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;font-weight:400;overflow-x:hidden}
 
 /* TYPOGRAPHY */
 h1,h2,h3{font-family:'Cormorant Garamond',serif}
@@ -153,11 +168,10 @@ nav.scrolled{background:rgba(247,246,242,.95);backdrop-filter:blur(20px);-webkit
 .hbadge-num{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;line-height:1;color:var(--txt);display:block}
 .hbadge-lbl{font-size:.62rem;font-weight:500;color:var(--dim);display:block;white-space:nowrap;margin-top:.08rem}
 
-/* scroll indicator */
-.scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.4rem}
-.scroll-ind span{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.scroll-line{width:1.5px;height:44px;background:linear-gradient(to bottom,var(--em),transparent);animation:sdown 2s infinite}
-@keyframes sdown{0%{transform:scaleY(0);transform-origin:top;opacity:1}50%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(1);transform-origin:bottom;opacity:0}}
+/* MOBILE FIXED CTA */
+#mobile-cta{display:none;position:fixed;bottom:1.2rem;left:1.2rem;right:1.2rem;z-index:200}
+#mobile-cta a{display:flex;align-items:center;justify-content:center;gap:.55rem;background:var(--em);color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;padding:.95rem 1.5rem;border-radius:var(--r-pill);box-shadow:0 8px 30px rgba(0,155,148,.4);text-decoration:none;letter-spacing:.02em}
+@media(max-width:768px){#mobile-cta{display:block}}
 
 /* ══ SERVICE FINDER BAR ══ */
 #finder{position:relative;z-index:10;margin-top:-2.5rem;padding:0 2rem 4rem}
@@ -330,6 +344,71 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
 .rev-x{opacity:0;transform:translateX(-22px);transition:opacity .75s cubic-bezier(.2,1,.3,1),transform .75s cubic-bezier(.2,1,.3,1)}
 .rev-x.on{opacity:1;transform:translateX(0)}
 
+/* ══ CERTIFICATIONS / CRÉDIBILITÉ ══ */
+#credibilite{padding:5rem 0;background:var(--em3)}
+.cred-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-bottom:3.5rem}
+.cred-item{text-align:center;padding:1.8rem 1rem;background:rgba(255,255,255,.06);border-radius:var(--r-lg);border:1px solid rgba(255,255,255,.09);transition:background .3s}
+.cred-item:hover{background:rgba(255,255,255,.1)}
+.cred-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;line-height:1;color:var(--em2);display:block}
+.cred-lbl{font-size:.78rem;color:rgba(255,255,255,.65);margin-top:.5rem;display:block;line-height:1.45}
+.cred-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}
+.cred-badge{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--r-pill);padding:.5rem 1.1rem;font-size:.75rem;color:rgba(255,255,255,.75);font-weight:500}
+.cred-badge svg{color:var(--em2);flex-shrink:0}
+.partners-row{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:2rem}
+.partner-chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-pill);padding:.45rem 1.2rem;font-size:.72rem;color:rgba(255,255,255,.55);font-weight:500;letter-spacing:.04em}
+@media(max-width:768px){.cred-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ══ LOCAL PRESENCE ══ */
+#local{padding:6rem 0 7rem;background:var(--bg)}
+.local-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3.5rem}
+.local-card{background:var(--surface);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm);transition:transform .35s,box-shadow .35s}
+.local-card:hover{transform:translateY(-5px);box-shadow:var(--sh)}
+.local-photo{height:180px;overflow:hidden;position:relative}
+.local-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.local-card:hover .local-photo img{transform:scale(1.06)}
+.local-photo-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,40,38,.55))}
+.local-city{position:absolute;bottom:.9rem;left:1.1rem;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;color:#fff;line-height:1}
+.local-region{display:block;font-family:'DM Sans',sans-serif;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:.15rem}
+.local-body{padding:1.3rem 1.5rem 1.6rem}
+.local-body p{font-size:.86rem;line-height:1.72;margin-bottom:.9rem}
+.local-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.local-tag{font-size:.62rem;font-weight:600;color:var(--em);background:var(--em-light);border:1px solid var(--bdr2);border-radius:var(--r-pill);padding:.2rem .7rem}
+@media(max-width:768px){.local-grid{grid-template-columns:1fr}}
+
+/* ══ BLOG ══ */
+#blog{padding:6rem 0 7rem;background:var(--bg2)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.blog-card{background:var(--surface);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm);transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column}
+.blog-card:hover{transform:translateY(-5px);box-shadow:var(--sh)}
+.blog-photo{height:170px;overflow:hidden}
+.blog-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.blog-card:hover .blog-photo img{transform:scale(1.06)}
+.blog-body{padding:1.3rem 1.5rem 1.6rem;flex:1;display:flex;flex-direction:column}
+.blog-cat{font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--em);margin-bottom:.6rem;display:block}
+.blog-body h3{font-size:1.05rem;line-height:1.4;margin-bottom:.6rem;font-family:'DM Sans',sans-serif;font-weight:600;color:var(--txt)}
+.blog-body p{font-size:.83rem;line-height:1.68;flex:1}
+.blog-meta{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--bdr)}
+.blog-date{font-size:.68rem;color:var(--muted)}
+.blog-read{font-size:.68rem;color:var(--em);font-weight:600}
+@media(max-width:768px){.blog-grid{grid-template-columns:1fr}}
+
+/* ══ FAQ ══ */
+#faq{padding:6rem 0 7rem;background:var(--bg)}
+.faq-layout{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;margin-top:3.5rem}
+.faq-side h3{font-size:1.3rem;margin-bottom:.8rem;font-family:'DM Sans',sans-serif;font-weight:600}
+.faq-side p{font-size:.88rem;line-height:1.7;margin-bottom:1.5rem}
+.faq-list{display:flex;flex-direction:column;gap:.5rem}
+.faq-item{background:var(--surface);border-radius:var(--r);border:1px solid var(--bdr);overflow:hidden;transition:box-shadow .3s}
+.faq-item.open{box-shadow:var(--sh-sm)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 1.3rem;background:none;border:none;cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:600;color:var(--txt);transition:color .25s}
+.faq-q:hover{color:var(--em)}
+.faq-icon{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--bdr2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;color:var(--em)}
+.faq-item.open .faq-icon{background:var(--em);border-color:var(--em);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:300px;padding:0 1.3rem 1.2rem}
+.faq-a p{font-size:.86rem;line-height:1.75;color:var(--dim)}
+@media(max-width:768px){.faq-layout{grid-template-columns:1fr;gap:2.5rem}}
+
 /* RESPONSIVE */
 @media(max-width:1024px){
   .hero-content{grid-template-columns:1fr;gap:3.5rem}
@@ -373,9 +452,6 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
 </style>
 </head>
 <body>
-
-<div id="cur"></div>
-<div id="cur-ring"></div>
 
 <!-- ══ TOP ANNOUNCEMENT BAR ══ -->
 <div id="topbar">
@@ -445,10 +521,10 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
       </div>
 
       <h1 class="hero-title">
-        Votre partenaire<br>
-        stratégique pour<br>
-        une performance<br>
-        <em>CHR</em> mesurable
+        Augmentez la<br>
+        rentabilité de votre<br>
+        établissement <em>CHR</em><br>
+        grâce à une stratégie éprouvée
       </h1>
 
       <p class="hero-desc">
@@ -480,7 +556,7 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
 
       <!-- Main photo card -->
       <div class="hero-photo-card">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&h=1100&fit=crop&q=80" alt="Restaurant gastronomique partenaire Opal CHR Consulting">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&h=1100&fit=crop&q=78&fm=webp" alt="Restaurant gastronomique partenaire Opal CHR Consulting" fetchpriority="high">
       </div>
 
       <!-- Floating badges -->
@@ -528,10 +604,6 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
 
   </div><!-- /hero-content -->
 
-  <div class="scroll-ind">
-    <span>Défiler</span>
-    <div class="scroll-line"></div>
-  </div>
 </section>
 
 <!-- ══ SERVICE FINDER ══ -->
@@ -612,7 +684,7 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
 
       <div class="svc-card rev">
         <div class="svc-photo">
-          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&h=300&fit=crop&q=75" alt="Audit et diagnostic CHR">
+          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&h=300&fit=crop&q=70&fm=webp" alt="Audit et diagnostic CHR" loading="lazy">
           <div class="svc-photo-overlay"></div>
           <div class="svc-num-badge">01</div>
         </div>
@@ -634,7 +706,7 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
 
       <div class="svc-card rev" style="transition-delay:.08s">
         <div class="svc-photo">
-          <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&h=300&fit=crop&q=75" alt="Stratégie commerciale CHR">
+          <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&h=300&fit=crop&q=70&fm=webp" alt="Stratégie commerciale CHR" loading="lazy">
           <div class="svc-photo-overlay"></div>
           <div class="svc-num-badge">02</div>
         </div>
@@ -655,7 +727,7 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
 
       <div class="svc-card rev" style="transition-delay:.16s">
         <div class="svc-photo">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=300&fit=crop&q=75" alt="Formation et management CHR">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=300&fit=crop&q=70&fm=webp" alt="Formation et management CHR" loading="lazy">
           <div class="svc-photo-overlay"></div>
           <div class="svc-num-badge">03</div>
         </div>
@@ -676,7 +748,7 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
 
       <div class="svc-card rev" style="transition-delay:.08s">
         <div class="svc-photo">
-          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=300&fit=crop&q=75" alt="Revenue management hôtelier">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=300&fit=crop&q=70&fm=webp" alt="Revenue management hôtelier" loading="lazy">
           <div class="svc-photo-overlay"></div>
           <div class="svc-num-badge">04</div>
         </div>
@@ -697,7 +769,7 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
 
       <div class="svc-card rev" style="transition-delay:.16s">
         <div class="svc-photo">
-          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=300&fit=crop&q=75" alt="Pilotage de performance CHR">
+          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=300&fit=crop&q=70&fm=webp" alt="Pilotage de performance CHR" loading="lazy">
           <div class="svc-photo-overlay"></div>
           <div class="svc-num-badge">05</div>
         </div>
@@ -719,7 +791,7 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
 
       <div class="svc-card rev" style="transition-delay:.24s">
         <div class="svc-photo">
-          <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=300&fit=crop&q=75" alt="Transformation digitale CHR">
+          <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=300&fit=crop&q=70&fm=webp" alt="Transformation digitale CHR" loading="lazy">
           <div class="svc-photo-overlay"></div>
           <div class="svc-num-badge">06</div>
         </div>
@@ -739,6 +811,59 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     CRÉDIBILITÉ & CERTIFICATIONS
+══════════════════════════════ -->
+<section id="credibilite">
+  <div class="container">
+    <div class="cred-grid rev">
+      <div class="cred-item">
+        <span class="cred-num">150+</span>
+        <span class="cred-lbl">Missions réalisées depuis 2009</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-num">15 ans</span>
+        <span class="cred-lbl">d'expertise exclusive dans le secteur CHR</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-num">98%</span>
+        <span class="cred-lbl">de clients satisfaits ou très satisfaits</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-num">+34%</span>
+        <span class="cred-lbl">de CA moyen généré sur 12 mois</span>
+      </div>
+    </div>
+    <div class="cred-badges rev">
+      <div class="cred-badge">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.5 4H13L9.5 7.5 11 12 7 9.5 3 12l1.5-4.5L1 5h4.5L7 1z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        Formation certifiée Qualiopi
+      </div>
+      <div class="cred-badge">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5l1.1 3.3H11.8L9 6.9l1.1 3.3L7 8.1l-3.1 2.1L5 6.9 2.2 4.8H6L7 1.5z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+        Membre UMIH &amp; GHR
+      </div>
+      <div class="cred-badge">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M5 7l1.5 1.5L9 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Cabinet indépendant — aucun conflit d'intérêt
+      </div>
+      <div class="cred-badge">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M5 7h4M7 5v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Interventions partout en France
+      </div>
+    </div>
+    <div class="partners-row rev">
+      <span class="partner-chip">Mews PMS</span>
+      <span class="partner-chip">Oracle Hospitality</span>
+      <span class="partner-chip">Lightspeed</span>
+      <span class="partner-chip">TheFork Manager</span>
+      <span class="partner-chip">D-EDGE</span>
+      <span class="partner-chip">Duetto</span>
+      <span class="partner-chip">Apaleo</span>
     </div>
   </div>
 </section>
@@ -927,6 +1052,248 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
 </section>
 
 <!-- ══════════════════════════════
+     BLOG / ACTUALITÉS CHR
+══════════════════════════════ -->
+<section id="blog">
+  <div class="container">
+    <div class="sec-hd rev">
+      <span class="lbl">Actualités &amp; Insights CHR</span>
+      <h2>Les dernières analyses<br>de nos experts</h2>
+      <p>Conseils pratiques, tendances du secteur et retours d'expérience terrain pour les professionnels CHR.</p>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card rev">
+        <div class="blog-photo">
+          <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=340&fit=crop&q=70&fm=webp" alt="Revenue management hôtel RevPAR" loading="lazy">
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">Revenue Management</span>
+          <h3>5 stratégies pour maximiser votre RevPAR et dépasser votre concurrence en 2025</h3>
+          <p>La tarification dynamique seule ne suffit plus. Découvrez comment combiner yield management, optimisation des canaux OTA et politiques tarifaires directes pour booster votre RevPAR de 20 à 40%.</p>
+          <div class="blog-meta">
+            <span class="blog-date">Mai 2025</span>
+            <span class="blog-read">5 min de lecture →</span>
+          </div>
+        </div>
+      </article>
+      <article class="blog-card rev" style="transition-delay:.08s">
+        <div class="blog-photo">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=340&fit=crop&q=70&fm=webp" alt="Management équipes hôtellerie restauration" loading="lazy">
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">RH &amp; Management</span>
+          <h3>Réduire le turnover de 50% : notre protocole management appliqué à 30 établissements CHR</h3>
+          <p>Un salarié CHR qui part coûte en moyenne 7 000 € à son établissement. Onboarding structuré, grille de progression, feedback hebdomadaire : les leviers qui font la différence.</p>
+          <div class="blog-meta">
+            <span class="blog-date">Avril 2025</span>
+            <span class="blog-read">4 min de lecture →</span>
+          </div>
+        </div>
+      </article>
+      <article class="blog-card rev" style="transition-delay:.16s">
+        <div class="blog-photo">
+          <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=340&fit=crop&q=70&fm=webp" alt="Digitalisation restaurant PMS outils digitaux" loading="lazy">
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">Transformation Digitale</span>
+          <h3>PMS, channel manager, caisse connectée : les outils digitaux indispensables pour votre établissement en 2025</h3>
+          <p>Le bon stack technologique peut réduire vos coûts de 15% et augmenter vos réservations directes de 25%. Tour d'horizon des solutions CHR à fort ROI.</p>
+          <div class="blog-meta">
+            <span class="blog-date">Mars 2025</span>
+            <span class="blog-read">6 min de lecture →</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     PRÉSENCE LOCALE
+══════════════════════════════ -->
+<section id="local">
+  <div class="container">
+    <div class="sec-hd rev">
+      <span class="lbl">Nos Zones d'Intervention</span>
+      <h2>Conseil CHR dans toute la France</h2>
+      <p>Cabinet basé à Paris, nous intervenons dans toutes les régions françaises. Une connaissance fine des marchés locaux pour des recommandations adaptées à votre territoire.</p>
+    </div>
+    <div class="local-grid">
+
+      <div class="local-card rev">
+        <div class="local-photo">
+          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700&h=360&fit=crop&q=70&fm=webp" alt="Conseil CHR Paris Île-de-France" loading="lazy">
+          <div class="local-photo-overlay"></div>
+          <div class="local-city">Paris<span class="local-region">Île-de-France</span></div>
+        </div>
+        <div class="local-body">
+          <p>L'Île-de-France concentre plus de 20 000 établissements CHR dans un marché ultra-concurrentiel. Nos consultants CHR Paris maîtrisent les spécificités du marché parisien : forte saisonnalité touristique, clientèle corporate en semaine, loyers élevés. Nous accompagnons brasseries emblématiques, hôtels boutique et groupes de restauration rapide haut de gamme.</p>
+          <div class="local-tags">
+            <span class="local-tag">Restauration gastronomique</span>
+            <span class="local-tag">Hôtellerie urbaine</span>
+            <span class="local-tag">Groupes multi-sites</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="local-card rev" style="transition-delay:.08s">
+        <div class="local-photo">
+          <img src="https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=700&h=360&fit=crop&q=70&fm=webp" alt="Conseil CHR Lyon Auvergne-Rhône-Alpes" loading="lazy">
+          <div class="local-photo-overlay"></div>
+          <div class="local-city">Lyon<span class="local-region">Auvergne-Rhône-Alpes</span></div>
+        </div>
+        <div class="local-body">
+          <p>Capitale gastronomique mondiale, Lyon présente des défis uniques : pression sur la qualité, concurrence des Bouchons lyonnais traditionnels et montée de la restauration tendance. Nos consultants CHR Lyon connaissent les cycles touristiques de la région, du ski alpin au tourisme thermale, et accompagnent établissements lyonnais comme régionaux.</p>
+          <div class="local-tags">
+            <span class="local-tag">Bouchons &amp; bistronomie</span>
+            <span class="local-tag">Tourisme alpin</span>
+            <span class="local-tag">Hôtellerie affaires</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="local-card rev" style="transition-delay:.08s">
+        <div class="local-photo">
+          <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee?w=700&h=360&fit=crop&q=70&fm=webp" alt="Conseil CHR Marseille PACA" loading="lazy">
+          <div class="local-photo-overlay"></div>
+          <div class="local-city">Marseille<span class="local-region">Provence-Alpes-Côte d'Azur</span></div>
+        </div>
+        <div class="local-body">
+          <p>Marseille et la région PACA concentrent une forte saisonnalité estivale avec un pic d'activité juillet-août critique. La gestion de ce pic et l'optimisation de la basse saison sont au cœur de nos missions. Nous accompagnons restaurants du Vieux-Port, hôtels de charme provençaux et établissements balnéaires dans leur stratégie de revenue management saisonnier.</p>
+          <div class="local-tags">
+            <span class="local-tag">Saisonnalité estivale</span>
+            <span class="local-tag">Restauration provençale</span>
+            <span class="local-tag">Hôtellerie balnéaire</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="local-card rev" style="transition-delay:.16s">
+        <div class="local-photo">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&h=360&fit=crop&q=70&fm=webp" alt="Conseil CHR Nice Côte d'Azur" loading="lazy">
+          <div class="local-photo-overlay"></div>
+          <div class="local-city">Nice<span class="local-region">Côte d'Azur</span></div>
+        </div>
+        <div class="local-body">
+          <p>La Côte d'Azur est l'une des destinations touristiques les plus haut de gamme d'Europe, avec une clientèle internationale exigeante. Nos consultants CHR Nice et Côte d'Azur maîtrisent les enjeux du positionnement premium, du revenue management luxury et de l'expérience client 5 étoiles. Hôtels de luxe, restaurants gastronomiques, clubs de plage : nous connaissons votre marché.</p>
+          <div class="local-tags">
+            <span class="local-tag">Luxe &amp; prestige</span>
+            <span class="local-tag">Clientèle internationale</span>
+            <span class="local-tag">Revenue management premium</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     FAQ SEO
+══════════════════════════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-hd rev">
+      <span class="lbl">Questions Fréquentes</span>
+      <h2>Tout savoir sur le conseil CHR</h2>
+    </div>
+    <div class="faq-layout">
+      <div class="faq-side rev">
+        <h3>Vous avez des questions sur notre accompagnement ?</h3>
+        <p>Nos experts répondent aux questions les plus courantes sur le conseil CHR, nos méthodes et les résultats attendus.</p>
+        <a href="#contact" class="btn-em" style="margin-top:.5rem">
+          <span>Poser ma question</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+      <div class="faq-list rev" style="transition-delay:.08s">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Qu'est-ce qu'un consultant CHR et en quoi peut-il vous aider ?
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Un consultant CHR est un expert spécialisé dans l'optimisation des performances des cafés, hôtels et restaurants. Contrairement à un consultant généraliste, il maîtrise les spécificités sectorielles : saisonnalité, food cost, yield management, satisfaction client en temps réel. Chez Opal CHR Consulting, notre accompagnement va de l'audit initial à la mise en œuvre opérationnelle et au suivi des résultats — avec un engagement sur des KPIs mesurables.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Quel est le coût d'un audit CHR ?
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-a"><p>La première consultation de 45 minutes est entièrement gratuite et sans engagement. Pour un établissement indépendant (restaurant ou hôtel de moins de 30 chambres), un audit complet débute à partir de 2 500 €. Le retour sur investissement se matérialise généralement dès les 3 premiers mois grâce aux économies et gains de CA identifiés. Contactez-nous pour une proposition adaptée à votre situation et votre budget.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Combien de temps dure une mission de conseil CHR ?
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Un audit diagnostic seul se réalise en 2 à 4 semaines. Une mission complète — de l'audit jusqu'à l'accompagnement à la mise en œuvre — s'étend sur 3 à 6 mois. Pour un suivi régulier (reporting mensuel, optimisation continue), nous proposons des contrats annuels. Nos 15 ans d'expérience nous permettent d'être efficaces et de livrer des recommandations actionnables rapidement.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Quels résultats concrets peut-on espérer ?
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Nos clients observent en moyenne +34% de CA dans les 12 mois suivant la mission, une réduction des coûts fixes de 15 à 25%, et une amélioration du RevPAR hôtelier de 20 à 45%. La baisse du turnover du personnel atteint 30 à 60% grâce à nos programmes de management. Ces résultats sont mesurés sur la base de 150+ missions réalisées depuis 2009 — avec des indicateurs de performance définis en amont de chaque mission.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Comment améliorer la rentabilité d'un restaurant ?
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-a"><p>L'amélioration de la rentabilité restauration passe par plusieurs leviers simultanés : analyse et réduction du food cost (cible &lt;30%), engineering de la carte pour mettre en avant les plats stars, optimisation des plannings et de la masse salariale, ajustement des horaires d'ouverture selon la fréquentation, et mise en place de promotions ciblées. Un tableau de bord hebdomadaire permet d'agir rapidement sur les écarts détectés.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Qu'est-ce que le revenue management hôtelier ?
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Le revenue management (ou yield management) consiste à vendre la bonne chambre, au bon client, au bon moment et au bon prix. Concrètement : ajuster les tarifs en temps réel selon la demande, les événements locaux et la concurrence. Un hôtel appliquant correctement le revenue management augmente son RevPAR de 20 à 40%. Les outils clés : channel manager, rate shopper, PMS connecté. Nos experts forment vos équipes et pérennisent ces gains.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Comment réduire le turnover dans les établissements CHR ?
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Un départ coûte entre 6 000 et 8 000 € pour un poste opérationnel CHR. Nos 4 axes : (1) onboarding structuré — un salarié bien intégré a 3× moins de risques de partir avant 6 mois, (2) communication managériale quotidienne avec feedback et reconnaissance, (3) rémunération compétitive alignée sur le marché local, (4) perspectives d'évolution clairement définies. Résultat moyen : -50% de turnover en 12 mois.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Quels KPIs suivre pour piloter un hôtel efficacement ?
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-a"><p>4 familles d'indicateurs : (1) Financiers — RevPAR, TRevPAR, GOP (Gross Operating Profit) ; (2) Commerciaux — taux d'occupation, ADR (tarif journalier moyen), RGI (part de marché) ; (3) Opérationnels — score satisfaction Google/Booking/TripAdvisor, NPS, taux de retour client ; (4) RH — turnover, absentéisme, productivité par département. Un tableau de bord hebdomadaire synthétisant ces 12 indicateurs est indispensable.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Opal CHR Consulting intervient-il dans toute la France ?
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Oui, nous intervenons dans toute la France. Basés à Paris, nous travaillons régulièrement à Lyon, Marseille, Nice, Bordeaux, Toulouse, Strasbourg, Nantes et dans toutes les régions touristiques. Pour les établissements éloignés ou les groupes multi-sites, nous adaptons notre mode d'intervention avec des visites terrain ciblées et un suivi à distance via nos outils de reporting partagés. La première consultation est disponible en visioconférence.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Comment démarrer avec Opal CHR Consulting ?
+            <span class="faq-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1v8M1 5h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </button>
+          <div class="faq-a"><p>Simple et sans risque. Remplissez le formulaire ci-dessous ou appelez-nous pour planifier votre audit gratuit de 45 minutes. Lors de cet échange (en personne à Paris ou en visio partout en France), nous analysons votre situation et vous remettons 3 à 5 recommandations prioritaires non engageantes. Si vous souhaitez aller plus loin, nous proposons une offre sur-mesure. Plus de 150 établissements ont déjà fait ce premier pas.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
      SECTION 5 — CONTACT
 ══════════════════════════════ -->
 <section id="contact">
@@ -1045,11 +1412,11 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
       <div class="ft-col">
         <h5>Expertises</h5>
         <ul class="ft-links">
-          <li><a href="#services">Audit & Diagnostic</a></li>
-          <li><a href="#services">Stratégie Commerciale</a></li>
-          <li><a href="#services">Revenue Management</a></li>
-          <li><a href="#services">Formation Management</a></li>
-          <li><a href="#services">Transformation Digitale</a></li>
+          <li><a href="audit-chr.html">Audit &amp; Diagnostic CHR</a></li>
+          <li><a href="conseil-restaurant.html">Conseil Restaurant</a></li>
+          <li><a href="revenue-management-hotel.html">Revenue Management Hôtel</a></li>
+          <li><a href="formation-management-chr.html">Formation Management</a></li>
+          <li><a href="transformation-digitale-chr.html">Transformation Digitale</a></li>
         </ul>
       </div>
       <div class="ft-col">
@@ -1057,8 +1424,9 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
         <ul class="ft-links">
           <li><a href="#approche">Notre approche</a></li>
           <li><a href="#resultats">Nos résultats</a></li>
+          <li><a href="#blog">Blog CHR</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Nous contacter</a></li>
-          <li><a href="#">Mentions légales</a></li>
         </ul>
       </div>
     </div>
@@ -1073,21 +1441,31 @@ footer{background:var(--em3);padding:4rem 0 2rem;position:relative}
   </div>
 </footer>
 
-<script>
-gsap.registerPlugin(ScrollTrigger);
+<!-- MOBILE FIXED CTA -->
+<div id="mobile-cta">
+  <a href="#contact">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M14 8L10 4M14 8l-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    Réserver un audit gratuit
+  </a>
+</div>
 
-/* ── CURSOR ── */
-const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function lr(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(lr)})();
-document.querySelectorAll('a,button,.svc-card,.kpi').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';ring.style.width='52px';ring.style.height='52px'});
-  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='36px';ring.style.height='36px'});
-});
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Qu'est-ce qu'un consultant CHR et en quoi peut-il vous aider ?","acceptedAnswer":{"@type":"Answer","text":"Un consultant CHR est un expert spécialisé dans l'optimisation des performances des cafés, hôtels et restaurants. Il maîtrise les spécificités sectorielles : saisonnalité, food cost, yield management, satisfaction client en temps réel."}},{"@type":"Question","name":"Quel est le coût d'un audit CHR ?","acceptedAnswer":{"@type":"Answer","text":"La première consultation de 45 minutes est entièrement gratuite et sans engagement. Pour un établissement indépendant, un audit complet débute à partir de 2 500 €."}},{"@type":"Question","name":"Quels résultats concrets peut-on espérer d'un consultant CHR ?","acceptedAnswer":{"@type":"Answer","text":"Nos clients observent en moyenne +34% de CA dans les 12 mois, une réduction des coûts fixes de 15 à 25%, et une amélioration du RevPAR hôtelier de 20 à 45%."}},{"@type":"Question","name":"Opal CHR Consulting intervient-il dans toute la France ?","acceptedAnswer":{"@type":"Answer","text":"Oui, nous intervenons dans toute la France : Paris, Lyon, Marseille, Nice, Bordeaux, Toulouse et toutes les régions touristiques."}}]}
+</script>
+
+<script>
+/* ── CURSOR removed — using native pointer ── */
+
+/* ── FAQ ACCORDION ── */
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el=>{el.classList.remove('open')});
+  if(!isOpen)item.classList.add('open');
+}
 
 /* ── NAV ── */
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60),{passive:true});
 
 /* ── HAMBURGER ── */
 function closeMenu(){document.getElementById('navLinks').classList.remove('open');document.querySelectorAll('.hbg span').forEach(s=>s.style.cssText='')}
